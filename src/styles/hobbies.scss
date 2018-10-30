@@ -1,0 +1,148 @@
+.hobbies {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    text-align: left;
+    &__title2 {
+        font-weight: 400;
+        border-bottom: 2px solid black;
+        padding: 6px 0;
+        margin: 30px 0;
+    }
+    &__title3 {
+        display: flex;
+        flex-direction: row;
+        font-weight: 400;
+        &__text {
+            display: flex;
+            margin-right: 10px;
+        }
+        &__divider {
+            display: flex;
+            position: relative;
+            height: 0;
+            top: 10px;
+            width: 100%;
+            border-top: 1px dotted black;
+        }
+    }
+    &__input {
+        width: 50%;
+        padding: 5px;
+        outline: none;
+        font-size: 14px;
+        border: 1px solid lightgray;
+        margin: 10px 20px 20px;
+    }
+    &__list {
+        margin: 0 20px;
+    }
+    &__item {
+        margin-bottom: 10px;
+        overflow: hidden;
+        white-space: nowrap;
+        position: relative;
+        padding-left: 18px;
+        &::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            height: 100%;
+            width: 20px;
+            background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+        }
+        &_friend {
+            display: inline-flex;
+            width: 100%;
+            overflow: visible;
+            white-space: initial;
+            position: relative;
+            &::after {
+                display: none;
+            }
+            .hobbies__item__text {
+                display: inline-flex;
+                flex-direction: column;
+                position: relative;
+                width: 100%;
+                margin-right: 10px;
+                white-space: nowrap;
+                overflow: hidden;
+                &::after {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    bottom: 0;
+                    height: 100%;
+                    width: 20px;
+                    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+                }
+            }
+            &:hover {
+                .hobbies__item__text {
+                    width: calc(100% - 120px);
+                }
+                .hobbies__item__alert {
+                    display: inline-flex;
+                    opacity: 1;
+                }
+            }
+        }
+        &:hover {
+            .hobbies__item__delete, .hobbies__item__add {
+                opacity: 1;
+            }
+        }
+        &__delete, &__add {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            height: 14px;
+            margin-top: 2px;
+            width: 14px;
+            padding: 0;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity .2s ease;
+        }
+        &__alert {
+            position: absolute;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            display: none;
+            padding: 0;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            opacity: 0;
+            transition: opacity .2s ease;
+            &__icon {
+                margin-right: 4px;
+            }
+        }
+        &__copied {
+            display: flex;
+            flex-direction: row;
+            color: green;
+            &__icon {
+                margin: 0 5px 0 0;
+            }
+        }
+    }
+    &__btn {
+        margin: 0 20px;
+        font-size: 14px;
+        color: orange;
+        text-decoration: underline;
+        border: none;
+        outline: none;
+        padding: 0;
+        cursor: pointer;
+    }
+}
