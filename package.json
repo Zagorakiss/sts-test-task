@@ -1,5 +1,6 @@
 {
   "name": "sts-test-task",
+  "author": "Rastorguev Sergey (zagorakom@gmail.com)",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
